@@ -1,0 +1,19 @@
+.casinoCard.unselected {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #C1C8F0), to(#EAEDFA));
+  background: linear-gradient(#C1C8F0 100%, #EAEDFA 100%);
+}
+
+.casinoCard.selected {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #FFD900), to(#FFBB00));
+  background: linear-gradient(#FFD900 100%, #FFBB00 100%);
+}
+
+.casinoCard :global(.card-img-top) {
+  position: relative;
+  bottom: 15px;
+}
+
+.casinoCard :global(.card-body) {
+  padding: 0 0 1rem 0;
+}
+/*# sourceMappingURL=index.module.css.map */

@@ -1,0 +1,18 @@
+.casinoCard {
+    &.unselected {
+        background: linear-gradient(#C1C8F0 100%, #EAEDFA 100%);
+    }
+    &.selected {
+        background: linear-gradient(#FFD900 100%, #FFBB00 100%);
+    }
+    :global(.card-img-top) {
+        position: relative;
+        bottom: 15px;
+    }
+    :global(.card-body) {
+        padding: 0 0 1rem 0;
+    }
+}
+
+
+// `${styles.casinoCard} ${isActive ? styles.selected: styles.unselected}  ms-2 me-2 mb-5`

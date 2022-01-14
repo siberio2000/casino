@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after  {
+    margin: auto !important;
+    padding: auto !important;
+    box-sizing: border-box;
+}
+
+
+body {
+  background-image: url("../images/bg.jpg");
+  background-size: 100vw 100vh;
+  background-repeat: repeat;
+  font-family: "FredokaOne-Regular" !important;
+}
+
+.container {
+    .text-1 {
+        color: #fff;
+        font-size: 36px;
+        line-height: 44px;
+        padding: 0 0 3rem 0;
+    }
+    .text-2 {
+        color: #fff;
+        font-size: 18px;
+        padding: 0 5rem 3rem 5rem;
+    }
+    .text-3 {
+        color: #fff;
+        font-size: 14px;
+        padding: 2rem 0;
+        a {
+            text-decoration: underline;
+            color: #fff;
+        }
+    }
+    .btn {
+        background: linear-gradient(#25A72E 0%, #79C523 100%);
+        padding: 1.3rem 2rem;
+        width: 400px;
+    }
+}
+
+
+
+
+
+@media (max-width: 575.98px) { 
+    * {
+        margin: initial !important;
+    }
+    .container {
+        .text-1 {
+            color: #fff;
+            font-size: 30px;
+            line-height: 36px;
+            padding: 0 0 3rem 0;
+        }
+        .text-2 {
+            color: #fff;
+            font-size: 15px;
+            line-height: 20px;
+            padding: 0 1rem 3rem 1rem;
+        }
+    }
+    .card-title {
+        font-size: 1rem !important;
+    }
+ }
