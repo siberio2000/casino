@@ -1,0 +1,25 @@
+.providerCard {
+  background-color: #000000;
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+  &.unselected {
+    border: none;
+  }
+  &.selected {
+    border: 5px solid #79c523;
+  }
+  :global(.card-img-top) {
+    width: 92px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .providerCard {
+    height: 105.85px;
+    width: 105.85px;
+    :global(.card-img-top) {
+      width: 82px;
+    }
+  }
+}

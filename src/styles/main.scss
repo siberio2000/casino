@@ -9,22 +9,56 @@
 
 body {
   background-image: url("../images/bg.jpg");
-  background-size: 100vw 100vh;
-  background-repeat: repeat;
+  background-size: 4000px auto;
+  background-repeat: no-repeat;
   font-family: "FredokaOne-Regular" !important;
 }
 
 .container {
+    max-width: 858px !important;
+    .text-question-number {
+        color: #FFD900;
+        font-size: 14px;
+        line-height: 24px;
+        padding: .1rem;
+        text-transform: uppercase;
+    }
+    .page-indicator {
+        padding: 1rem 0;
+        width: 270px;
+        .row {
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 50px;
+            height: 5px;
+            margin: 0.15rem !important;
+            border-radius:3px;
+            &.page-visited {
+                background-color: #ffffff;
+            }
+        }
+    }
+    .text-bordered {
+        color: #FFD900;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        border: 1px solid #FFD900;
+        border-radius: 10px;
+        width: 400px;
+        height: 48px;
+    }
     .text-1 {
         color: #fff;
         font-size: 36px;
         line-height: 44px;
-        padding: 0 0 3rem 0;
+        padding: 1rem 0;
+        text-transform: uppercase;
     }
     .text-2 {
-        color: #fff;
+        color: #C7EDED;
         font-size: 18px;
-        padding: 0 5rem 3rem 5rem;
+        line-height: 24px;
+        padding: 2rem 0;
     }
     .text-3 {
         color: #fff;
@@ -37,8 +71,10 @@ body {
     }
     .btn {
         background: linear-gradient(#25A72E 0%, #79C523 100%);
-        padding: 1.3rem 2rem;
         width: 400px;
+        height: 90px;
+        border-radius: 10px;
+        font-size: 30px;
     }
 }
 
@@ -48,20 +84,43 @@ body {
 
 @media (max-width: 575.98px) { 
     * {
-        margin: initial !important;
+        margin: auto !important;
     }
     .container {
+        .text-question-number {
+            color: #FFD900;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .page-indicator {
+            .row {
+                width: 63px;
+                height: 5px;
+            }
+        }
+        .text-bordered {
+            font-size: 16px;
+            line-height: 19px;
+            width: 345px;
+            height: 48px;
+        }
         .text-1 {
             color: #fff;
             font-size: 30px;
             line-height: 36px;
-            padding: 0 0 3rem 0;
+            padding: 1rem 0;
         }
         .text-2 {
             color: #fff;
             font-size: 15px;
-            line-height: 20px;
-            padding: 0 1rem 3rem 1rem;
+            line-height: 24px;
+        }
+        .btn {
+            background: linear-gradient(#25A72E 0%, #79C523 100%);
+            width: 345px;
+            height: 75px;
+            border-radius: 10px;
+            font-size: 25px;
         }
     }
     .card-title {

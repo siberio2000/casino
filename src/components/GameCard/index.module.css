@@ -1,0 +1,22 @@
+.gameCard {
+  background-color: #79c523;
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+.gameCard.unselected {
+  border: none;
+}
+
+.gameCard.selected {
+  border: 5px solid #79c523;
+}
+
+@media (max-width: 575.98px) {
+  .gameCard {
+    height: 105.85px;
+    width: 105.85px;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import StartCard from "../components/CasinoCard";
+import CasinoCard from "../../components/CasinoCard";
+import { Link } from 'react-router-dom';
 
 const startCardText = {
   text1: "pick any category, complete quiz & earn casino prize",
@@ -12,44 +13,44 @@ const startCardText = {
 const startCardContent = [
   {
     id: 1,
-    imageUrl: require("../images/startPage/ico-1.png"),
+    imageUrl: require("../../images/startPage/ico-1.png"),
     text: "Blackjack",
     link: "",
   },
   {
     id: 2,
-    imageUrl: require("../images/startPage/ico-2.png"),
+    imageUrl: require("../../images/startPage/ico-2.png"),
     text: "Roulette",
     link: "",
   },
   {
     id: 3,
-    imageUrl: require("../images/startPage/ico-3.png"),
+    imageUrl: require("../../images/startPage/ico-3.png"),
     text: "Baccarat",
     link: "",
   },
   {
     id: 4,
-    imageUrl: require("../images/startPage/ico-4.png"),
+    imageUrl: require("../../images/startPage/ico-4.png"),
     text: "Poker",
     link: "",
   },
   {
     id: 5,
-    imageUrl: require("../images/startPage/ico-5.png"),
+    imageUrl: require("../../images/startPage/ico-5.png"),
     text: "Dragon & Tiger",
     link: "",
   },
   {
     id: 6,
-    imageUrl: require("../images/startPage/ico-6.png"),
+    imageUrl: require("../../images/startPage/ico-6.png"),
     text: "Slots",
     link: "",
   },
 ];
 
 const StartPage = () => {
-  const [cards, setCards] = useState(startCardContent);
+  const [cards] = useState(startCardContent);
 
   return (
     <>
@@ -65,19 +66,21 @@ const StartPage = () => {
                 <Row className="align-items-center justify-content-center">
                   {cards.map((card) => (
                     <Col key={card.id} xs={6} md={4} className="g-0">
-                      <StartCard data={card} />
+                      <CasinoCard data={card} />
                     </Col>
                   ))}
                 </Row>
               </Col>
               <Col className="text-2">{startCardText.text2}</Col>
-              <Col className="d-flex">
-                <Button variant="primary" size="lg">
+              <Col className="d-flex justify-content-center">
+              <Link to="/question1/providers">
+                  <Button variant="primary" size="lg">
                   {startCardText.cta}
                 </Button>
+              </Link>
               </Col>
               <Col className="text-3">
-                Already a member? <a href="#">Login</a>
+                Already a member? <a href="#dfgf">Login</a>
               </Col>
             </Row>
           </Col>

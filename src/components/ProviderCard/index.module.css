@@ -1,0 +1,29 @@
+.providerCard {
+  background-color: #000000;
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+}
+
+.providerCard.unselected {
+  border: none;
+}
+
+.providerCard.selected {
+  border: 5px solid #79c523;
+}
+
+.providerCard :global(.card-img-top) {
+  width: 92px;
+}
+
+@media (max-width: 575.98px) {
+  .providerCard {
+    height: 105.85px;
+    width: 105.85px;
+  }
+  .providerCard :global(.card-img-top) {
+    width: 82px;
+  }
+}
+/*# sourceMappingURL=index.module.css.map */
