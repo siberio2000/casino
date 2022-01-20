@@ -150,7 +150,7 @@ const QuestionPage1Providers = () => {
               <Col xs={12} sm={6} md={5} className="text-2">
                 {questionPage1Text.text2}
               </Col>
-              <Col className="d-flex justify-content-center">
+              <Col className="justify-content-center">
                 <Link to="/question1/games">
                   <Button variant="primary" size="lg">
                     {questionPage1Text.cta}

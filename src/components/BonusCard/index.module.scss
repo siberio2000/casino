@@ -1,0 +1,21 @@
+.bonusCard {
+  :global(.card) {
+    width: fit-content;
+    background: linear-gradient(#c1c8f0 0%, #eaedfa 100%);
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    &.unselected {
+      background: linear-gradient(#c1c8f0 100%, #eaedfa 100%);
+    }
+    &.selected {
+      background: linear-gradient(#ffd900 100%, #ffbb00 100%);
+    }
+  }
+  :global(.card-title) {
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 29px;
+    white-space: nowrap;
+  }
+}

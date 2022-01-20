@@ -72,7 +72,7 @@ const StartPage = () => {
                 </Row>
               </Col>
               <Col className="text-2">{startCardText.text2}</Col>
-              <Col className="d-flex justify-content-center">
+              <Col className="justify-content-center">
               <Link to="/question1/providers">
                   <Button variant="primary" size="lg">
                   {startCardText.cta}

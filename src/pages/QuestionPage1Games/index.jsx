@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import GameCard from "../../components/GameCard";
 
+import { Link } from "react-router-dom";
+
 const questionPage1Text = {
   textQuestionNumber: "1/5",
   text1: "pick up your favorite providers & games",
@@ -101,7 +103,6 @@ const questionPage1CardContent = [
     imageUrl: require("../../images/games/ico-9.png"),
     link: "",
   },
-  
 ];
 
 const QuestionPage1Games = () => {
@@ -110,9 +111,7 @@ const QuestionPage1Games = () => {
   return (
     <>
       <Container>
-        <Row
-          className="text-center align-items-center justify-content-center g-0"
-        >
+        <Row className="text-center align-items-center justify-content-center g-0">
           <Col xs={12} md={12}>
             <Row className="flex-column">
               <Col className="text-question-number">
@@ -139,25 +138,24 @@ const QuestionPage1Games = () => {
               >
                 {questionPage1Text.textBordered}
               </Col>
-              <Col style={{ maxWidth: "850px", width: 'auto' }}>
+              <Col style={{ maxWidth: "850px", width: "auto" }}>
                 <Row className="g-0 align-items-center justify-content-center pt-4">
-                {cards.map((card) => (
+                  {cards.map((card) => (
                     <Col key={card.id} xs={4} md={2} className="g-0">
                       <GameCard data={card} />
                     </Col>
                   ))}
-
                 </Row>
               </Col>
-              <Col  
-              xs={12}
-                sm={6}
-                md={5} 
-                className="text-2">{questionPage1Text.text2}</Col>
-              <Col className="d-flex justify-content-center">
-                <Button variant="primary" size="lg">
-                  {questionPage1Text.cta}
-                </Button>
+              <Col xs={12} sm={6} md={5} className="text-2">
+                {questionPage1Text.text2}
+              </Col>
+              <Col className="justify-content-center">
+                <Link to="/question2">
+                  <Button variant="primary" size="lg">
+                    {questionPage1Text.cta}
+                  </Button>
+                </Link>
               </Col>
             </Row>
           </Col>
