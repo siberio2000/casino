@@ -19,7 +19,6 @@ const QuestionPage5 = () => {
   const [value, setValue] = useState(50);
   const [currency, setCurrency] = useState('EUR');
 
-
   useEffect(() => {
     stateService.addData({
       questionPage5: {range: value, currency},
