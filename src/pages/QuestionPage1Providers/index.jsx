@@ -164,7 +164,7 @@ const QuestionPage1Providers = () => {
                   ))}
                 </Row>
               </Col>
-              <Col xs={12} sm={6} md={5} className="text-2">
+              <Col xs={10} md={8} className="text-2">
                 {questionPage1Text.text2}
               </Col>
               <Col className="justify-content-center pb-5">

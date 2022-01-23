@@ -17,43 +17,41 @@ const startCardContent = [
     id: 1,
     imageUrl: require("../../images/startPage/ico-1.png"),
     text: "Blackjack",
-    link: "",
   },
   {
     id: 2,
     imageUrl: require("../../images/startPage/ico-2.png"),
     text: "Roulette",
-    link: "",
   },
   {
     id: 3,
     imageUrl: require("../../images/startPage/ico-3.png"),
     text: "Baccarat",
-    link: "",
   },
   {
     id: 4,
     imageUrl: require("../../images/startPage/ico-4.png"),
     text: "Poker",
-    link: "",
   },
   {
     id: 5,
     imageUrl: require("../../images/startPage/ico-5.png"),
     text: "Dragon & Tiger",
-    link: "",
   },
   {
     id: 6,
     imageUrl: require("../../images/startPage/ico-6.png"),
     text: "Slots",
-    link: "",
   },
 ];
 
 const StartPage = () => {
   const [state, setState] = useState({});
 
+  /**
+   *  Using useEffect once initial render complete
+   *  And waiting for events to store and display them in console
+   *  */
   useEffect(() => {
     stateService.addData({
       startPage: startCardContent
@@ -71,7 +69,9 @@ const StartPage = () => {
         >
           <Col xs={12} md={10}>
             <Row className="flex-column">
-              <Col xs={12} sm={12} md={12} className="text-1 pb-5">{startCardText.text1}</Col>
+              <Col xs={12} sm={12} md={12} className="text-1 pb-5">
+                {startCardText.text1}
+              </Col>
               <Col style={{ maxWidth: "600px" }}>
                 <Row className="align-items-center justify-content-center">
                   {startCardContent.map((card) => (
@@ -90,7 +90,7 @@ const StartPage = () => {
                   ))}
                 </Row>
               </Col>
-              <Col xs={12} md={8} className="text-2 pt-3">
+              <Col xs={10} md={8} className="text-2 pt-3">
                 {startCardText.text2}
               </Col>
               <Col className="justify-content-center pb-5">
@@ -100,8 +100,10 @@ const StartPage = () => {
                   </Button>
                 </Link>
               </Col>
-              <Col className="text-3 pt-0" style={{ marginTop: '-2rem!important'}}>
-                Already a member? <a href="#dfgf">Login</a>
+              <Col
+                className="login-text pt-0"
+              >
+                Already a member? <a href="#login">Login</a>
               </Col>
             </Row>
           </Col>

@@ -69,12 +69,14 @@ const QuestionPage4 = () => {
                 <Row className="page-visited"></Row>
                 <Row></Row>
               </Col>
-              <Col xs={12} sm={12} md={10} className="text-1">{questionPage4Text.text1}</Col>
+              <Col xs={12} sm={12} md={10} className="text-1">
+                {questionPage4Text.text1}
+              </Col>
               <Col>
-                <Row className="g-0 align-items-center justify-content-center pt-4" >
+                <Row className="g-0 align-items-center justify-content-center pt-4">
                   {questionPage4Options.map((button) => (
                     <Col key={button.id} xs={12} md={12} className="g-0">
-                      <QuizButtonLong 
+                      <QuizButtonLong
                         button={button}
                         selected={selected}
                         onClick={() => setSelected(button.id)}
@@ -100,9 +102,37 @@ const QuestionPage4 = () => {
               )}
               <Col className="justify-content-center pb-5">
                 <Link to="/question5">
-                  <Button variant="primary" size="lg">
-                    {questionPage4Text.cta}
-                  </Button>
+                  {!selected && (
+                    <Button
+                      onClick={(e) => e.preventDefault()}
+                      variant="primary"
+                      size="lg"
+                      style={{ background: "#99CC99" }}
+                    >
+                      {questionPage4Text.cta}
+                    </Button>
+                  )}
+                  {!!selected && !selectedItem.correct && (
+                    <Button
+                      onClick={(e) => e.preventDefault()}
+                      variant="primary"
+                      size="lg"
+                      style={{ background: "#99CC99", opacity: "1" }}
+                    >
+                      {questionPage4Text.cta}
+                    </Button>
+                  )}
+                  {!!selected && selectedItem.correct && (
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      style={{
+                        background: "linear-gradient(#25a72e 0%, #79c523 100%)",
+                      }}
+                    >
+                      {questionPage4Text.cta}
+                    </Button>
+                  )}
                 </Link>
               </Col>
             </Row>

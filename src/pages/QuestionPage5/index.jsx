@@ -28,7 +28,7 @@ const QuestionPage5 = () => {
   return (
     <Container>
       <Row className="text-center align-items-center justify-content-center g-0">
-        <Col xs={12} md={12}>
+        <Col xs={12} md={10}>
           <Row className="flex-column">
             <Col className="text-question-number">
               QUESTION {questionPage5Text.textQuestionNumber}
@@ -73,7 +73,7 @@ const QuestionPage5 = () => {
                 />
               </Figure>
             </Col>
-            <Col xs={12} sm={6} md={5} className="text-2">
+            <Col xs={12} sm={6} md={6} className="text-2 pb-5">
               {questionPage5Text.text2}
             </Col>
             <Col className="justify-content-center pb-5">

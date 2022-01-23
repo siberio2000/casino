@@ -43,13 +43,17 @@ const questionPage2Options = [
 const QuestionPage2 = () => {
   const [selected, setSelected] = useState(0);
 
-  // find clicked button and define if its correct answer
+  /**
+   * Using useMemo to find clicked button
+   * and define if its correct answer
+   */
   const selectedItem = useMemo(() => {
     return questionPage2Options.find((option) => option.id === selected) || {};
   }, [selected]);
 
   useEffect(() => {
-    selectedItem.id && state.addData({ QuestionPage2: { selected: selectedItem.answer } });
+    selectedItem.id &&
+      state.addData({ QuestionPage2: { selected: selectedItem.answer } });
   }, [selectedItem]);
 
   return (
@@ -73,7 +77,9 @@ const QuestionPage2 = () => {
                 <Row></Row>
                 <Row></Row>
               </Col>
-              <Col xs={12} sm={12} md={8} className="text-1">{questionPage2Text.text1}</Col>
+              <Col xs={12} sm={12} md={8} className="text-1">
+                {questionPage2Text.text1}
+              </Col>
               <Col>
                 <Row className="g-0 align-items-center justify-content-center pt-4">
                   {questionPage2Options.map((button) => (
@@ -104,9 +110,37 @@ const QuestionPage2 = () => {
               )}
               <Col className="justify-content-center pb-5">
                 <Link to="/question3">
-                  <Button variant="primary" size="lg">
-                    {questionPage2Text.cta}
-                  </Button>
+                  {!selected && (
+                    <Button
+                      onClick={(e) => e.preventDefault()}
+                      variant="primary"
+                      size="lg"
+                      style={{ background: "#99CC99" }}
+                    >
+                      {questionPage2Text.cta}
+                    </Button>
+                  )}
+                  {!!selected && !selectedItem.correct && (
+                    <Button
+                      onClick={(e) => e.preventDefault()}
+                      variant="primary"
+                      size="lg"
+                      style={{ background: "#99CC99", opacity: "1" }}
+                    >
+                      {questionPage2Text.cta}
+                    </Button>
+                  )}
+                  {!!selected && selectedItem.correct && (
+                    <Button
+                      variant="primary"
+                      size="lg"
+                      style={{
+                        background: "linear-gradient(#25a72e 0%, #79c523 100%)",
+                      }}
+                    >
+                      {questionPage2Text.cta}
+                    </Button>
+                  )}
                 </Link>
               </Col>
             </Row>

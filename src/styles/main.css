@@ -65,13 +65,13 @@ body {
   padding: 2rem 0;
 }
 
-.container .text-3 {
+.container .login-text {
   color: #fff;
   font-size: 14px;
-  padding: 2rem 0;
+  margin-top: -2rem !important;
 }
 
-.container .text-3 a {
+.container .login-text a {
   text-decoration: underline;
   color: #fff;
 }
@@ -182,7 +182,7 @@ body {
     font-size: 25px;
   }
   .container .flex-cards {
-    min-width: 300px !important;
+    min-width: 320px !important;
   }
   .card-title {
     font-size: 1rem !important;
