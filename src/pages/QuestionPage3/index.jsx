@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import BonusCard from "../../components/BonusCard";
-
 import { Link } from "react-router-dom";
+
+import * as stateService from "../../state";
 
 const questionPage1Text = {
   textQuestionNumber: "3/5",
@@ -52,7 +53,15 @@ const questionPage3Options = [
 ];
 
 const QuestionPage3 = () => {
-  const [cards] = useState(questionPage3Options);
+  const [state, setState] = useState({});
+
+  useEffect(() => {
+    stateService.addData({
+      QuestionPage3: questionPage3Options
+        .filter((item) => state[item.id])
+        .map((item) => item.text),
+    });
+  }, [state]);
 
   return (
     <>
@@ -78,10 +87,19 @@ const QuestionPage3 = () => {
               <Col className="text-1">{questionPage1Text.text1}</Col>
 
               <Col>
-                <Row className="g-0 align-items-center justify-content-center pt-4">
-                  {cards.map((card) => (
-                    <Col key={card.id} xs={12} md={4} className="p-2">
-                      <BonusCard data={card} />
+                <Row className="d-flex g-0 align-items-center justify-content-center pt-4">
+                  {questionPage3Options.map((card) => (
+                    <Col key={card.id} className="p-2 flex-cards">
+                      <BonusCard
+                        data={card}
+                        selected={state[card.id]}
+                        onClick={() =>
+                          setState((state) => ({
+                            ...state,
+                            [card.id]: !state[card.id],
+                          }))
+                        }
+                      />
                     </Col>
                   ))}
                 </Row>
@@ -89,7 +107,7 @@ const QuestionPage3 = () => {
               <Col xs={12} sm={6} md={5} className="text-2">
                 {questionPage1Text.text2}
               </Col>
-              <Col className="justify-content-center">
+              <Col className="justify-content-center pb-5">
                 <Link to="/question4">
                   <Button variant="primary" size="lg">
                     {questionPage1Text.cta}

@@ -9,30 +9,44 @@
 }
 
 .range .roundbutton {
-  background: -webkit-gradient(linear, left top, left bottom, from(#C1C8F0), to(#EAEDFA));
-  background: linear-gradient(#C1C8F0 0%, #EAEDFA 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#c1c8f0), to(#eaedfa));
+  background: linear-gradient(#c1c8f0 0%, #eaedfa 100%);
   width: 59px;
   height: 59px;
   font-size: 14px;
-  color: #959CC3;
+  color: #959cc3;
   border-radius: 30px;
 }
 
 .range :global(#dropdown-basic-button) {
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaedfa));
   background: linear-gradient(#ffffff 0%, #eaedfa 100%);
-  color: #4D4D4D;
+  color: #4d4d4d;
   width: 160px;
   height: 80px;
   font-size: 18px;
 }
 
+.range :global(.dropdown) {
+  padding: 0 1rem 0 0 !important;
+}
+
+.range :global(.dropdown-item) {
+  text-align: center;
+}
+
 .range :global(.dropdown-toggle::after) {
   margin-left: 2.255em !important;
+  background: url("../../images/arrow-down.png");
+  width: 30px;
+  height: 18px;
+  border-top: 0;
+  border-left: 0;
+  vertical-align: -3.5px;
 }
 
 .range :global(.range-slider__wrap) {
-  width: 55% !important;
+  width: 75%;
 }
 
 .range :global(.range-slider__wrap) div:first-child {
@@ -55,12 +69,39 @@
 }
 
 .range :global(input[type="range" i]) {
-  max-width: 529px;
-  width: 100% !important;
+  max-width: 560px;
+  width: 100%;
   height: 14px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border-radius: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#959cc3), to(#ced3eb));
+  background: linear-gradient(#959cc3 0%, #ced3eb 100%);
+}
+
+.range input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 41px;
+  width: 41px;
+  border-radius: 25px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFBB00), to(#F3B200));
+  background: linear-gradient(#FFBB00 0%, #F3B200 100%);
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  :global(input[type="range" i]) {
+    width: 94% !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  :global(.range-slider__wrap) {
+    width: 55% !important;
+  }
+  :global(input[type="range" i]) {
+    width: 80% !important;
+  }
 }
 /*# sourceMappingURL=index.module.css.map */

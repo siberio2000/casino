@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import CasinoCard from "../../components/CasinoCard";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+import * as stateService from "../../state";
 
 const startCardText = {
   text1: "pick any category, complete quiz & earn casino prize",
@@ -50,7 +52,15 @@ const startCardContent = [
 ];
 
 const StartPage = () => {
-  const [cards] = useState(startCardContent);
+  const [state, setState] = useState({});
+
+  useEffect(() => {
+    stateService.addData({
+      startPage: startCardContent
+        .filter((item) => state[item.id])
+        .map((item) => item.text),
+    });
+  }, [state]);
 
   return (
     <>
@@ -61,25 +71,36 @@ const StartPage = () => {
         >
           <Col xs={12} md={10}>
             <Row className="flex-column">
-              <Col className="text-1">{startCardText.text1}</Col>
+              <Col xs={12} sm={12} md={12} className="text-1 pb-5">{startCardText.text1}</Col>
               <Col style={{ maxWidth: "600px" }}>
                 <Row className="align-items-center justify-content-center">
-                  {cards.map((card) => (
+                  {startCardContent.map((card) => (
                     <Col key={card.id} xs={6} md={4} className="g-0">
-                      <CasinoCard data={card} />
+                      <CasinoCard
+                        data={card}
+                        selected={state[card.id]}
+                        onClick={() =>
+                          setState((state) => ({
+                            ...state,
+                            [card.id]: !state[card.id],
+                          }))
+                        }
+                      />
                     </Col>
                   ))}
                 </Row>
               </Col>
-              <Col className="text-2">{startCardText.text2}</Col>
-              <Col className="justify-content-center">
-              <Link to="/question1/providers">
-                  <Button variant="primary" size="lg">
-                  {startCardText.cta}
-                </Button>
-              </Link>
+              <Col xs={12} md={8} className="text-2 pt-3">
+                {startCardText.text2}
               </Col>
-              <Col className="text-3">
+              <Col className="justify-content-center pb-5">
+                <Link to="/question1/providers">
+                  <Button variant="primary" size="lg">
+                    {startCardText.cta}
+                  </Button>
+                </Link>
+              </Col>
+              <Col className="text-3 pt-0" style={{ marginTop: '-2rem!important'}}>
                 Already a member? <a href="#dfgf">Login</a>
               </Col>
             </Row>

@@ -1,16 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import cx from "classnames";
 import styles from "./index.module.scss";
 
-const BonusCard = ({ data }) => {
+const BonusCard = ({ data, selected, onClick }) => {
   const { text } = data;
-
-  const [isActive, setActive] = useState(false);
-
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
 
   return (
     <>
@@ -19,10 +13,10 @@ const BonusCard = ({ data }) => {
           <Col className={cx(styles.bonusCard, "g-0")}>
             <Card
               className={cx({
-                [styles.selected]: isActive,
-                [styles.unselected]: !isActive,
+                [styles.selected]: selected,
+                [styles.unselected]: !selected,
               })}
-              onClick={toggleClass}
+              onClick={onClick}
             >
               <Card.Body>
                 <Card.Title>{text}</Card.Title>

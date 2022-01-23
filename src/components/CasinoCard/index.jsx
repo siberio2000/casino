@@ -1,28 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import cx from "classnames";
 import styles from "./index.module.scss";
 
-const CasinoCard = ({ data }) => {
+const CasinoCard = ({ data, selected, onClick }) => {
   const { text, imageUrl } = data;
-
-  const [isActive, setActive] = useState(false);
-
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
 
   return (
     <>
       <Container>
         <Row>
-          <Col style={{ minWidth: "60px" }} className="g-0">
+          <Col style={{ minWidth: "60px" }} className="g-0 ps-1 pe-1">
             <Card
-              className={cx(styles.casinoCard, "mc-2 me-2 mb-5", {
-                [styles.selected]: isActive,
-                [styles.unselected]: !isActive,
+              className={cx(styles.casinoCard, "mc-2 me-2 mb-4", {
+                [styles.selected]: selected,
+                [styles.unselected]: !selected,
               })}
-              onClick={toggleClass}
+              onClick={onClick}
             >
               <Card.Img variant="top" src={imageUrl} />
               <Card.Body>

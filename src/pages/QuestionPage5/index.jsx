@@ -1,12 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button, Figure } from "react-bootstrap";
 import Range from "../../components/Range";
-
 import { Link } from "react-router-dom";
 
 import Paylogos from "../../images/pay-logos.png";
 
-const questionPage4Text = {
+const questionPage5Text = {
   textQuestionNumber: "5/5",
   text1: "Please, set up your preferred betting range",
   textBordered: "",
@@ -15,7 +14,6 @@ const questionPage4Text = {
 };
 
 const QuestionPage5 = () => {
-
   return (
     <>
       <Container>
@@ -23,7 +21,7 @@ const QuestionPage5 = () => {
           <Col xs={12} md={12}>
             <Row className="flex-column">
               <Col className="text-question-number">
-                QUESTION {questionPage4Text.textQuestionNumber}
+                QUESTION {questionPage5Text.textQuestionNumber}
               </Col>
               <Col
                 xs={12}
@@ -37,9 +35,18 @@ const QuestionPage5 = () => {
                 <Row className="page-visited"></Row>
                 <Row className="page-visited"></Row>
               </Col>
-              <Col className="text-1">{questionPage4Text.text1}</Col>
-              <Col style={{fontSize: '18px', color: '#ffffff', textTransform: 'touppercase'}}>
-              Deposit Limit Per month
+              <Col xs={12} sm={12} md={10} className="text-1">
+                {questionPage5Text.text1}
+              </Col>
+              <Col
+                className="pt-3"
+                style={{
+                  fontSize: "18px",
+                  color: "#ffffff",
+                  textTransform: "uppercase",
+                }}
+              >
+                Deposit Limit Per month
               </Col>
               <Col>
                 <Row className="g-0 align-items-center justify-content-center pt-4">
@@ -47,7 +54,7 @@ const QuestionPage5 = () => {
                 </Row>
               </Col>
               <Col>
-                <Figure>
+                <Figure className="p-3">
                   <Figure.Image
                     width={510}
                     height={36}
@@ -57,13 +64,13 @@ const QuestionPage5 = () => {
                 </Figure>
               </Col>
               <Col xs={12} sm={6} md={5} className="text-2">
-                {questionPage4Text.text2}
+                {questionPage5Text.text2}
               </Col>
 
-              <Col className="justify-content-center">
+              <Col className="justify-content-center pb-5">
                 <Link to="/congrats">
                   <Button variant="primary" size="lg">
-                    {questionPage4Text.cta}
+                    {questionPage5Text.cta}
                   </Button>
                 </Link>
               </Col>

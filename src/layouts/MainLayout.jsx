@@ -16,7 +16,7 @@ import LastPage from "../pages/LastPage";
 const Layout = () => {
   return (
     <Router>
-      <Container fluid className="g-0">
+      <Container fluid className="g-0" style={{maxWidth: '1100px'}}>
         <Row className="g-0">
           <Col>
           <Header />

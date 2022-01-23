@@ -14,15 +14,11 @@ body {
   font-family: "FredokaOne-Regular" !important;
 }
 
-.container {
-  max-width: 858px !important;
-}
-
 .container .text-question-number {
-  color: #FFD900;
+  color: #ffd900;
   font-size: 14px;
   line-height: 24px;
-  padding: .1rem;
+  padding: 0.1rem;
   text-transform: uppercase;
 }
 
@@ -44,11 +40,11 @@ body {
 }
 
 .container .text-bordered {
-  color: #FFD900;
+  color: #ffd900;
   font-size: 18px;
   line-height: 22px;
   text-transform: uppercase;
-  border: 1px solid #FFD900;
+  border: 1px solid #ffd900;
   border-radius: 10px;
   width: 400px;
   height: 48px;
@@ -63,7 +59,7 @@ body {
 }
 
 .container .text-2 {
-  color: #C7EDED;
+  color: #c7eded;
   font-size: 18px;
   line-height: 24px;
   padding: 2rem 0;
@@ -80,9 +76,29 @@ body {
   color: #fff;
 }
 
+.container .text-correct {
+  color: #79c523;
+  font-size: 36px;
+  line-height: 24px;
+  padding: 1rem 0 2rem 0;
+}
+
+.container .text-incorrect {
+  color: #ff7e7e;
+  font-size: 36px;
+  line-height: 24px;
+  padding: 1rem 0 2rem 0;
+}
+
+.container .congrats-text {
+  color: #ffffff;
+  font-size: 96px;
+  line-height: 116px;
+}
+
 .container .btn {
-  background: -webkit-gradient(linear, left top, left bottom, from(#25A72E), to(#79C523));
-  background: linear-gradient(#25A72E 0%, #79C523 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#25a72e), to(#79c523));
+  background: linear-gradient(#25a72e 0%, #79c523 100%);
   max-width: 400px;
   width: 100%;
   height: 90px;
@@ -91,9 +107,37 @@ body {
   border: none;
 }
 
+.container .card {
+  cursor: pointer;
+}
+
+.container .flex-cards {
+  position: relative;
+  -ms-flex-preferred-size: calc(18% - 20px);
+      flex-basis: calc(18% - 20px);
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  max-width: calc(57% - 25px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0px !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 @media (max-width: 575.98px) {
   .container .text-question-number {
-    color: #FFD900;
+    color: #ffd900;
     font-size: 14px;
     line-height: 24px;
   }
@@ -117,14 +161,28 @@ body {
     color: #fff;
     font-size: 15px;
     line-height: 24px;
+    padding: 2rem 0;
+  }
+  .container .text-correct {
+    font-size: 30px;
+  }
+  .container .text-incorrect {
+    font-size: 30px;
+  }
+  .container .congrats-text {
+    font-size: 38px;
+    line-height: 55px;
   }
   .container .btn {
-    background: -webkit-gradient(linear, left top, left bottom, from(#25A72E), to(#79C523));
-    background: linear-gradient(#25A72E 0%, #79C523 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#25a72e), to(#79c523));
+    background: linear-gradient(#25a72e 0%, #79c523 100%);
     max-width: 345px;
     height: 75px;
     border-radius: 10px;
     font-size: 25px;
+  }
+  .container .flex-cards {
+    min-width: 300px !important;
   }
   .card-title {
     font-size: 1rem !important;

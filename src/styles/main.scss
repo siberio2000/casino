@@ -1,11 +1,10 @@
 *,
 *::before,
-*::after  {
-    margin: auto !important;
-    padding: auto !important;
-    box-sizing: border-box;
+*::after {
+  margin: auto !important;
+  padding: auto !important;
+  box-sizing: border-box;
 }
-
 
 body {
   background-image: url("../images/bg.jpg");
@@ -15,110 +14,155 @@ body {
 }
 
 .container {
-    max-width: 858px !important;
-    .text-question-number {
-        color: #FFD900;
-        font-size: 14px;
-        line-height: 24px;
-        padding: .1rem;
-        text-transform: uppercase;
+  .text-question-number {
+    color: #ffd900;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0.1rem;
+    text-transform: uppercase;
+  }
+  .page-indicator {
+    padding: 1rem 0;
+    width: 270px;
+    .row {
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 50px;
+      height: 5px;
+      margin: 0.15rem !important;
+      border-radius: 3px;
+      &.page-visited {
+        background-color: #ffffff;
+      }
     }
-    .page-indicator {
-        padding: 1rem 0;
-        width: 270px;
-        .row {
-            background-color: rgba(255, 255, 255, 0.5);
-            width: 50px;
-            height: 5px;
-            margin: 0.15rem !important;
-            border-radius:3px;
-            &.page-visited {
-                background-color: #ffffff;
-            }
-        }
+  }
+  .text-bordered {
+    color: #ffd900;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    border: 1px solid #ffd900;
+    border-radius: 10px;
+    width: 400px;
+    height: 48px;
+  }
+  .text-1 {
+    color: #fff;
+    font-size: 36px;
+    line-height: 44px;
+    padding: 1rem 0;
+    text-transform: uppercase;
+  }
+  .text-2 {
+    color: #c7eded;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 2rem 0;
+  }
+  .text-3 {
+    color: #fff;
+    font-size: 14px;
+    padding: 2rem 0;
+    a {
+      text-decoration: underline;
+      color: #fff;
     }
-    .text-bordered {
-        color: #FFD900;
-        font-size: 18px;
-        line-height: 22px;
-        text-transform: uppercase;
-        border: 1px solid #FFD900;
-        border-radius: 10px;
-        width: 400px;
-        height: 48px;
-    }
-    .text-1 {
-        color: #fff;
-        font-size: 36px;
-        line-height: 44px;
-        padding: 1rem 0;
-        text-transform: uppercase;
-    }
-    .text-2 {
-        color: #C7EDED;
-        font-size: 18px;
-        line-height: 24px;
-        padding: 2rem 0;
-    }
-    .text-3 {
-        color: #fff;
-        font-size: 14px;
-        padding: 2rem 0;
-        a {
-            text-decoration: underline;
-            color: #fff;
-        }
-    }
-    .btn {
-        background: linear-gradient(#25A72E 0%, #79C523 100%);
-        max-width: 400px;
-        width: 100%;
-        height: 90px;
-        border-radius: 10px;
-        font-size: 30px;
-        border: none;
-    }
+  }
+  .text-correct {
+    color: #79c523;
+    font-size: 36px;
+    line-height: 24px;
+    padding: 1rem 0 2rem 0;
+  }
+  .text-incorrect {
+    color: #ff7e7e;
+    font-size: 36px;
+    line-height: 24px;
+    padding: 1rem 0 2rem 0;
+  }
+  .congrats-text {
+    color: #ffffff;
+    font-size: 96px;
+    line-height: 116px;
+  }
+  .btn {
+    background: linear-gradient(#25a72e 0%, #79c523 100%);
+    max-width: 400px;
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    font-size: 30px;
+    border: none;
+  }
+  .card {
+    cursor: pointer;
+  }
+  .flex-cards {
+    position: relative;
+    flex-basis: calc(18% - 20px);
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: calc(57% - 25px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 0px !important;
+    transition: 0.5s;
+  }
 }
 
-@media (max-width: 575.98px) { 
-    .container {
-        .text-question-number {
-            color: #FFD900;
-            font-size: 14px;
-            line-height: 24px;
-        }
-        .page-indicator {
-            .row {
-                width: 63px;
-                height: 5px;
-            }
-        }
-        .text-bordered {
-            font-size: 16px;
-            line-height: 19px;
-            width: 345px;
-            height: 48px;
-        }
-        .text-1 {
-            color: #fff;
-            font-size: 30px;
-            line-height: 36px;
-            padding: 1rem 0;
-        }
-        .text-2 {
-            color: #fff;
-            font-size: 15px;
-            line-height: 24px;
-        }
-        .btn {
-            background: linear-gradient(#25A72E 0%, #79C523 100%);
-            max-width: 345px;
-            height: 75px;
-            border-radius: 10px;
-            font-size: 25px;
-        }
+@media (max-width: 575.98px) {
+  .container {
+    .text-question-number {
+      color: #ffd900;
+      font-size: 14px;
+      line-height: 24px;
     }
-    .card-title {
-        font-size: 1rem !important;
+    .page-indicator {
+      .row {
+        width: 63px;
+        height: 5px;
+      }
     }
- }
+    .text-bordered {
+      font-size: 16px;
+      line-height: 19px;
+      width: 345px;
+      height: 48px;
+    }
+    .text-1 {
+      color: #fff;
+      font-size: 30px;
+      line-height: 36px;
+      padding: 1rem 0;
+    }
+    .text-2 {
+      color: #fff;
+      font-size: 15px;
+      line-height: 24px;
+      padding: 2rem 0;
+    }
+    .text-correct {
+      font-size: 30px;
+    }
+    .text-incorrect {
+      font-size: 30px;
+    }
+    .congrats-text {
+      font-size: 38px;
+      line-height: 55px;
+    }
+    .btn {
+      background: linear-gradient(#25a72e 0%, #79c523 100%);
+      max-width: 345px;
+      height: 75px;
+      border-radius: 10px;
+      font-size: 25px;
+    }
+    .flex-cards {
+      min-width: 300px !important;
+    }
+  }
+  .card-title {
+    font-size: 1rem !important;
+  }
+}

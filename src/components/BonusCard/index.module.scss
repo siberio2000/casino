@@ -1,14 +1,21 @@
 .bonusCard {
+  // display: contents;
+  // max-width: 1080px;
+  // width: 100%;
   :global(.card) {
     width: fit-content;
     background: linear-gradient(#c1c8f0 0%, #eaedfa 100%);
     border-radius: 10px;
     border: 1px solid #ffffff;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: inline-block;
+    border: none;
     &.unselected {
       background: linear-gradient(#c1c8f0 100%, #eaedfa 100%);
     }
     &.selected {
-      background: linear-gradient(#ffd900 100%, #ffbb00 100%);
+      background: linear-gradient(#ffd900 0%, #ffbb00 100%);
     }
   }
   :global(.card-title) {
@@ -17,5 +24,18 @@
     font-size: 24px;
     line-height: 29px;
     white-space: nowrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .bonusCard {
+    min-width: 200px;
+    width: 100%;
+    :global(.card-title) {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+      white-space: normal !important;
+    }
   }
 }

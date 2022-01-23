@@ -6,6 +6,10 @@
   background: linear-gradient(#c1c8f0 0%, #eaedfa 100%);
   border-radius: 10px;
   border: 1px solid #ffffff;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block;
+  border: none;
 }
 
 .bonusCard :global(.card).unselected {
@@ -14,8 +18,8 @@
 }
 
 .bonusCard :global(.card).selected {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #ffd900), to(#ffbb00));
-  background: linear-gradient(#ffd900 100%, #ffbb00 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffd900), to(#ffbb00));
+  background: linear-gradient(#ffd900 0%, #ffbb00 100%);
 }
 
 .bonusCard :global(.card-title) {
@@ -24,5 +28,20 @@
   font-size: 24px;
   line-height: 29px;
   white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .bonusCard {
+    min-width: 200px;
+    width: 100%;
+  }
+  .bonusCard :global(.card-title) {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    white-space: normal !important;
+  }
 }
 /*# sourceMappingURL=index.module.css.map */

@@ -1,36 +1,42 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Button, Figure } from "react-bootstrap";
-import Range from "../../components/Range";
+import { Container, Row, Col, Button } from "react-bootstrap";
+
+import Confetti from "react-confetti";
 
 import { Link } from "react-router-dom";
 
-const questionPage4Text = {
+const finalPageText = {
   textQuestionNumber: "5/5",
-  text1: "Congrats!",
+  text1: "YOU HAVE EARNED",
   textBordered: "",
-  text2: "YOU HAVE EARNED 50 FREE SPINS",
+  text2: "50 ",
   cta: "Earn now",
 };
 
-const QuestionPage5 = () => {
+const LastPage = () => {
   return (
     <>
       <Container>
         <Row className="text-center align-items-center justify-content-center g-0">
           <Col xs={12} md={12}>
             <Row className="flex-column">
-              <Col className="text-1">{questionPage4Text.text1}</Col>
-              <Col xs={12} sm={6} md={5} className="text-2">
-                {questionPage4Text.text2}
+              <Col className="congrats-text pb-3">
+                CONGRATS!
+              </Col>
+              <Col className="text-1">{finalPageText.text1}</Col>
+
+              <Col style={finalMessageStyle} className="pb-5">
+                {finalPageText.text2} FREE SPINS
               </Col>
               <Col className="justify-content-center">
                 <Link to="">
                   <Button variant="primary" size="lg">
-                    {questionPage4Text.cta}
+                    {finalPageText.cta}
                   </Button>
                 </Link>
               </Col>
             </Row>
+            <Confetti style={confettiStyle} />
           </Col>
         </Row>
       </Container>
@@ -38,4 +44,16 @@ const QuestionPage5 = () => {
   );
 };
 
-export default QuestionPage5;
+const confettiStyle = {
+  maxWidth: "1670px",
+  width: "100%",
+  height: "100vh",
+};
+
+const finalMessageStyle = {
+  fontSize: "36px",
+  lineHeight: "44px",
+  color: "#FFD900",
+};
+
+export default LastPage;
