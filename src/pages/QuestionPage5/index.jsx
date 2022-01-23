@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 
 import Paylogos from "../../images/pay-logos.png";
 
+import * as stateService from "../../state";
+
 const questionPage5Text = {
   textQuestionNumber: "5/5",
   text1: "Please, set up your preferred betting range",
@@ -14,71 +16,78 @@ const questionPage5Text = {
 };
 
 const QuestionPage5 = () => {
-  return (
-    <>
-      <Container>
-        <Row className="text-center align-items-center justify-content-center g-0">
-          <Col xs={12} md={12}>
-            <Row className="flex-column">
-              <Col className="text-question-number">
-                QUESTION {questionPage5Text.textQuestionNumber}
-              </Col>
-              <Col
-                xs={12}
-                sm={6}
-                md={5}
-                className="page-indicator d-flex flex-row align-items-center justify-content-around"
-              >
-                <Row className="page-visited"></Row>
-                <Row className="page-visited"></Row>
-                <Row className="page-visited"></Row>
-                <Row className="page-visited"></Row>
-                <Row className="page-visited"></Row>
-              </Col>
-              <Col xs={12} sm={12} md={10} className="text-1">
-                {questionPage5Text.text1}
-              </Col>
-              <Col
-                className="pt-3"
-                style={{
-                  fontSize: "18px",
-                  color: "#ffffff",
-                  textTransform: "uppercase",
-                }}
-              >
-                Deposit Limit Per month
-              </Col>
-              <Col>
-                <Row className="g-0 align-items-center justify-content-center pt-4">
-                  <Range />
-                </Row>
-              </Col>
-              <Col>
-                <Figure className="p-3">
-                  <Figure.Image
-                    width={510}
-                    height={36}
-                    alt="Paylogos"
-                    src={Paylogos}
-                  />
-                </Figure>
-              </Col>
-              <Col xs={12} sm={6} md={5} className="text-2">
-                {questionPage5Text.text2}
-              </Col>
+  const [value, setValue] = useState(50);
+  const [currency, setCurrency] = useState('EUR');
 
-              <Col className="justify-content-center pb-5">
-                <Link to="/congrats">
-                  <Button variant="primary" size="lg">
-                    {questionPage5Text.cta}
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Container>
-    </>
+
+  useEffect(() => {
+    stateService.addData({
+      questionPage5: {range: value, currency},
+    });
+  }, [value, currency]);
+
+  return (
+    <Container>
+      <Row className="text-center align-items-center justify-content-center g-0">
+        <Col xs={12} md={12}>
+          <Row className="flex-column">
+            <Col className="text-question-number">
+              QUESTION {questionPage5Text.textQuestionNumber}
+            </Col>
+            <Col
+              xs={12}
+              sm={6}
+              md={5}
+              className="page-indicator d-flex flex-row align-items-center justify-content-around"
+            >
+              <Row className="page-visited"></Row>
+              <Row className="page-visited"></Row>
+              <Row className="page-visited"></Row>
+              <Row className="page-visited"></Row>
+              <Row className="page-visited"></Row>
+            </Col>
+            <Col xs={12} sm={12} md={10} className="text-1">
+              {questionPage5Text.text1}
+            </Col>
+            <Col
+              className="pt-3"
+              style={{
+                fontSize: "18px",
+                color: "#ffffff",
+                textTransform: "uppercase",
+              }}
+            >
+              Deposit Limit Per month
+            </Col>
+            <Col>
+              <Row className="g-0 align-items-center justify-content-center pt-4">
+                <Range value={value} setValue={setValue} setCurrency={setCurrency} />
+              </Row>
+            </Col>
+            <Col>
+              <Figure className="p-3">
+                <Figure.Image
+                  width={510}
+                  height={36}
+                  alt="Paylogos"
+                  src={Paylogos}
+                />
+              </Figure>
+            </Col>
+            <Col xs={12} sm={6} md={5} className="text-2">
+              {questionPage5Text.text2}
+            </Col>
+            <Col className="justify-content-center pb-5">
+              <Link to="/congrats">
+                <Button variant="primary" size="lg">
+                  {questionPage5Text.cta}
+                </Button>
+              </Link>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

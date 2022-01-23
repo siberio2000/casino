@@ -1,11 +1,18 @@
-.range input {
-  max-width: 600px;
+.range :global(.display-input) {
+  max-width: 620px;
+  width: 100%;
+  height: 81px;
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaedfa));
   background: linear-gradient(#ffffff 0%, #eaedfa 100%);
   color: #4d4d4d;
   font-size: 48px;
   text-align: center;
   margin: 1rem !important;
+  border-radius: 10px;
+}
+
+.range :global(form) {
+  width: 650px;
 }
 
 .range .roundbutton {
@@ -18,31 +25,20 @@
   border-radius: 30px;
 }
 
-.range :global(#dropdown-basic-button) {
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaedfa));
-  background: linear-gradient(#ffffff 0%, #eaedfa 100%);
+.range :global(.form-select) {
+  background-color: #ffffff !important;
   color: #4d4d4d;
   width: 160px;
   height: 80px;
   font-size: 18px;
-}
-
-.range :global(.dropdown) {
-  padding: 0 1rem 0 0 !important;
+  border-radius: 10px;
+  background: url("../../images/arrow-down.png");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center !important;
 }
 
 .range :global(.dropdown-item) {
   text-align: center;
-}
-
-.range :global(.dropdown-toggle::after) {
-  margin-left: 2.255em !important;
-  background: url("../../images/arrow-down.png");
-  width: 30px;
-  height: 18px;
-  border-top: 0;
-  border-left: 0;
-  vertical-align: -3.5px;
 }
 
 .range :global(.range-slider__wrap) {
@@ -69,8 +65,8 @@
 }
 
 .range :global(input[type="range" i]) {
-  max-width: 560px;
-  width: 100%;
+  max-width: 529px;
+  width: 96%;
   height: 14px;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -88,6 +84,22 @@
   background: -webkit-gradient(linear, left top, left bottom, from(#FFBB00), to(#F3B200));
   background: linear-gradient(#FFBB00 0%, #F3B200 100%);
   cursor: pointer;
+}
+
+.range :global(select) {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  line-height: normal;
+  text-transform: none;
+  text-indent: 10px;
+  text-shadow: none;
+  text-align: start;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  cursor: default;
 }
 
 @media (max-width: 992px) {
